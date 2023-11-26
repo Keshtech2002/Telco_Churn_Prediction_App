@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier 
 from sklearn import metrics
 from flask import Flask, request, render_template
+from logging import debug
 import pickle
 
 app = Flask("__name__")
@@ -131,4 +132,4 @@ def predict():
                            query19 = request.form['query19'])
     
 if __name__ == "__main__":
-     app.run(debug=True)
+     app.run(debug = True, host="0.0.0.0")
